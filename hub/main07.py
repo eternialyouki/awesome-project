@@ -1,4 +1,4 @@
-# 请求体——多个参数
+# 请求体_多个参数
 from typing import Annotated
 
 from fastapi import FastAPI, Path,Body,Query
@@ -15,19 +15,19 @@ class User(BaseModel):
     name: int | None =None
 
 #装饰器1 路径+查询+请求体
-# @app.put("/items/{item_id}")
-# async def update_item(
-#     item_id: Annotated[int ,Path(title="...",ge=0,le=1000)],
-#     q:str | None = None,
-#     item: Item | None = None
-# ):
-#     result={"item_id":item_id}
+@app.put("/items/{item_id}")
+async def update_item(
+    item_id: Annotated[int ,Path(title="...",ge=0,le=1000)],
+    q:str | None = None,
+    item: Item | None = None
+):
+    result={"item_id":item_id}
 
-#     if q:
-#         result.update({"q": q})
-#     if item:
-#         result.update({"item": item})
-#     return result
+    if q:
+        result.update({"q": q})
+    if item:
+        result.update({"item": item})
+    return result
 
 #装饰器2 多个请求体
 # @app.put("/items/{item_id}")
