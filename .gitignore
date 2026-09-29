@@ -1,0 +1,7 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Project config (excluded per request)
+pyproject.toml
